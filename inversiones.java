@@ -62,7 +62,7 @@ public class inversiones<T> {
    }
 
    public static void main(String[] args) {
-    Integer[] arr = {4,2,1};
+    Integer[] arr = {1,2,5,4,4,6,7};
     int[] k = new int[1];
     k[0]= 0;
     inversiones x = new inversiones(arr);
