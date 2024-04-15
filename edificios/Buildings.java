@@ -10,7 +10,10 @@ public class Buildings {
 
     public static List<Points> silueta(List<Skyline> arr){
         if (arr.size() <=1) {
-            return getSkylinePoints(arr.get(0));
+            List<Points> points = new ArrayList<>();
+            points.add(new Points(arr.get(0).getIzq()));
+            points.add(new Points(arr.get(0).getDer()));
+            return points;
         }
 
         int mid = arr.size() / 2;
@@ -23,14 +26,6 @@ public class Buildings {
 
         return merge(leftPoints,rightPoints);
     }
-
-    private static List<Points> getSkylinePoints(Skyline building) {
-        List<Points> points = new ArrayList<>();
-        points.add(new Points(building.getIzq()));
-        points.add(new Points(building.getDer()));
-        return points;
-    }
-
 
 
     private static List<Points> merge(List<Points> left,List<Points> right){
