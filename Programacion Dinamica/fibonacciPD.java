@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class fibonacciPD {
     
     int[] arr;
@@ -41,6 +43,22 @@ public class fibonacciPD {
     }
 
 
+    public int catalanMemo(int n ,HashMap<Integer,Integer> cache){
+        if (!cache.containsKey(n)) {
+            if (n == 0) {
+                cache.put(0, 1);
+            }else{
+                int sum = 0;
+                for (int k = 1; k <= n; k++) {
+                    sum += (catalanMemo(k-1, cache) * catalanMemo(n-k, cache));
+                }
+                cache.put(n, sum);
+            }
+        }
+        return cache.get(n);
+    }
+
+
     public static void main(String[] args) {
         int n = 18;
         fibonacciPD arr = new fibonacciPD(n+1);
@@ -49,9 +67,10 @@ public class fibonacciPD {
 
         System.out.println("Fibonacci:"+res);
 
-        int cat = 50;
+        int cat = 4;
 
-        int r = arr.catalan(cat);
+        HashMap<Integer,Integer> cache = new HashMap<Integer,Integer>();
+        int r = arr.catalanMemo(cat,cache);
 
         System.out.println("EL numero Catalan es:"+r);
 
