@@ -8,12 +8,11 @@ public class knapsack {
 
     public static int mochila(int i,int j){
 
-        if (i==0 || j==0) {
+        if (i<0 || j==0) {
             return 0;
         }
         if (F[i][j]<0) {
             int aux;
-            
             
             if (j<weigths[i]) {
                 aux = mochila(i-1, j);
@@ -34,6 +33,10 @@ public class knapsack {
             Arrays.fill(row,-1);
         }
 
+        for (int i = 0; i < args.length; i++) {
+            F[0][i]=0;
+            F[i][0]=0;
+        }
         int res = knapsack.mochila(weigths.length-1, 5);
 
         System.out.println("El valor mas grande que puedes lleva es de:"+res);
