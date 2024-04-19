@@ -44,3 +44,5 @@ ord [] = []
 ord (x:xs)  | sorted x = x 
             | otherwise = ord xs 
 
+terna :: Int -> [(Int,Int,Int)]
+terna n = [(a,b,c)| a<-[1..n], b<-[1..n], c<-[1..n], c*c==b*b+a*a]
