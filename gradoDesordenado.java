@@ -1,20 +1,16 @@
 import java.util.ArrayList;
 
-public class gradoDesordenado<T> {
+public class gradoDesordenado {
     
-    private T[] array; 
-    public gradoDesordenado(T[] arr){
-        array= arr;
-    }
-
-    public int gradoDesorden(ArrayList<Integer> arr,int n){
+    public int gradoDesorden(int[] arr,int n){
         int intercambios = 0;
         for (int i = n-1; i >= 1; i--) {
             int largest = indexOfLargest(arr, i+1);
             
-            int temp = arr.get(i);
-            arr.set(i, arr.get(largest));
-            arr.set(largest, temp); 
+            int temp = arr[i];
+         
+            arr[i]=arr[largest];
+            arr[largest]= temp;
 
             if (i!=largest) {
                 intercambios++; 
@@ -27,13 +23,13 @@ public class gradoDesordenado<T> {
         return intercambios;
     }
 
-    private int indexOfLargest(ArrayList<Integer> arr, int n){
-        int x = arr.get(0);
+    private int indexOfLargest(int[] arr, int n){
+        int x = arr[0];
         
         int index = 0;
         for (int i = 0; i < n; i++) {
-            if (x<arr.get(i)) {
-                x=arr.get(i);
+            if (x<arr[i]) {
+                x=arr[i];
                 index = i;
             }
         }
@@ -41,7 +37,7 @@ public class gradoDesordenado<T> {
     }
 
     public static void main(String[] args) {
-        Integer[] arr = {1,2,5,4,4,6,7};
+        int[] arr = {1,2,5,4,4,6,7};
         
         ArrayList<Integer> arr1 =new ArrayList<>();
         arr1.add(7);

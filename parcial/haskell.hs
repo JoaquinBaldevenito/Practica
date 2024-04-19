@@ -85,3 +85,6 @@ tareas2 (x:ps)  min  | aux x 1 < min = tareas2 ps  (aux x 1)
 
 tareasPerm2 :: [(Int,Int)] -> Int
 tareasPerm2 xs = tareas2 (permutaciones xs) maxBound 
+
+terna :: Int -> [(Int,Int,Int)]
+terna n = [(a,b,c)| a<-[1..n], b<-[1..n], c<-[1..n], c*c==b*b+a*a]
