@@ -1,4 +1,4 @@
-public class count {
+public class Count {
     
     public static int rep(int[] arr,int begin,int end,int k){
 
@@ -53,7 +53,7 @@ public class count {
         
         int[] arr = {1,1,2,2,2,2,2};
 
-        int res = count.rep(arr, 0, arr.length-1, 2);
+        int res = Count.rep(arr, 0, arr.length-1, 2);
 
         System.out.println(res);
     }

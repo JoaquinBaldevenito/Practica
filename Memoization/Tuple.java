@@ -1,4 +1,4 @@
-package edificios;
+
 
 public class Tuple<T,P> {
 
@@ -10,11 +10,11 @@ public class Tuple<T,P> {
         b = y;
     }
 
-    public int getX(){
-        return x;
+    public T getX(){
+        return a;
     }
-    public int getY(){
-        return y;
+    public P getY(){
+        return b;
     }
     
     @Override
@@ -31,7 +31,7 @@ public class Tuple<T,P> {
 
     @Override
     public String toString() {
-        return "(" + x + ", " + y + ")";
+        return "(" + a + ", " + b + ")";
     }
 }
 

@@ -1,5 +1,3 @@
-import Tuple;
-
 public class inmobiliario {
     
     public static Tuple<Integer,Integer> ganancia(Integer[] arr){

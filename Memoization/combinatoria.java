@@ -1,6 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
-import edificios.Tuple;
+
 
 public class combinatoria {
     

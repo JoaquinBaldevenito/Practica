@@ -1,4 +1,4 @@
-package grafodirigido;
+
 
   import java.util.ArrayList;
   import java.util.List;
@@ -15,6 +15,16 @@ public class Vertice {
     return id;
   }
 
+  private int key;
+
+  public void setKey(int key){
+    this.key = key;
+  }
+
+  public int getKey(){
+    return key;
+  }
+  
   /**
    * identificador del vertice.
    */
@@ -40,16 +50,6 @@ public class Vertice {
   public Vertice(Integer id) {
     this.id = id;
     adyacentes = new ArrayList<>();
-  }
-
-  private int key;
-
-  public void setKey(int key){
-    this.key = key;
-  }
-
-  public int getKey(){
-    return key;
   }
 
   /**
